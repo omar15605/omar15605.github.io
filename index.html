@@ -17,7 +17,7 @@
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             display: inline-block;
-            margin-bottom: 30px; /* زيادة المسافة بين الصوتيات */
+            margin-bottom: 30px;
         }
         button {
             margin: 5px;
@@ -40,45 +40,46 @@
 </head>
 <body>
     <h2>تسجيل صوتيات قراءة قرآن</h2>
+    
     <div class="audio-container">
-        <p id="audioTitle" class="audio-title">تراويح 10 رمضان | عبدالسلام العبيدي</p>
-        <audio id="audio" controls>
+        <p class="audio-title">تراويح 10 رمضان | عبدالسلام العبيدي</p>
+        <audio id="audio1" controls>
             <source src="audio1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
         <br>
-        <button onclick="skip(-15)">⏪ 15s</button>
-        <button onclick="togglePlayPause()">▶️/⏸</button>
-        <button onclick="skip(15)">⏩ 15s</button>
+        <button onclick="skip('audio1', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio1')">▶️/⏸</button>
+        <button onclick="skip('audio1', 15)">⏩ 15s</button>
     </div>
+    
     <div class="audio-container">
-        <p id="audioTitle" class="audio-title">معاذ حسن الشيخي سورة البقرة</p>
+        <p class="audio-title">معاذ حسن الشيخي سورة البقرة</p>
         <audio id="audio" controls>
             <source src="audio.ogg" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
         <br>
-        <button onclick="skip(-15)">⏪ 15s</button>
-        <button onclick="togglePlayPause()">▶️/⏸</button>
-        <button onclick="skip(15)">⏩ 15s</button>
+        <button onclick="skip('audio', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio')">▶️/⏸</button>
+        <button onclick="skip('audio', 15)">⏩ 15s</button>
     </div>
+    
     <div class="audio-container">
-        <p id="audioTitle" class="audio-title">سورة غافر | احمد الدرسي</p>
-        <audio id="audio" controls>
+        <p class="audio-title">سورة غافر | احمد الدرسي</p>
+        <audio id="audio2" controls>
             <source src="audio2.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
         <br>
-        <button onclick="skip(-15)">⏪ 15s</button>
-        <button onclick="togglePlayPause()">▶️/⏸</button>
-        <button onclick="skip(15)">⏩ 15s</button>
+        <button onclick="skip('audio2', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio2')">▶️/⏸</button>
+        <button onclick="skip('audio2', 15)">⏩ 15s</button>
     </div>
 
     <script>
-        const audio = document.getElementById('audio');
-        const audioTitle = document.getElementById('audioTitle');
-        
-        function togglePlayPause() {
+        function togglePlayPause(audioId) {
+            const audio = document.getElementById(audioId);
             if (audio.paused) {
                 audio.play();
             } else {
@@ -86,7 +87,8 @@
             }
         }
 
-        function skip(seconds) {
+        function skip(audioId, seconds) {
+            const audio = document.getElementById(audioId);
             audio.currentTime += seconds;
         }
     </script>
