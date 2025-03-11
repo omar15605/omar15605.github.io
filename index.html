@@ -78,7 +78,15 @@
     </div>
 
     <script>
+        const audios = document.querySelectorAll('audio');
+
         function togglePlayPause(audioId) {
+            audios.forEach(audio => {
+                if (audio.id !== audioId) {
+                    audio.pause();
+                }
+            });
+            
             const audio = document.getElementById(audioId);
             if (audio.paused) {
                 audio.play();
