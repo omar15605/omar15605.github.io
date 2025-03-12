@@ -142,6 +142,17 @@
         <button onclick="togglePlayPause('audio9')">▶️/⏸</button>
         <button onclick="skip('audio9', 15)">⏩ 15s</button>
     </div>
+    <div class="audio-container">
+        <p class="audio-title">تراويح 11 رمضان | عبدالسلام العبيدي</p>
+        <audio id="audio10" controls>
+            <source src="audio10.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio10', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio10')">▶️/⏸</button>
+        <button onclick="skip('audio10', 15)">⏩ 15s</button>
+    </div>
 
     <script>
         const audios = document.querySelectorAll('audio');
