@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3498db">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
     <title>تسجيل صوتيات قراءة قرآن</title>
     <style>
         body {
@@ -224,5 +230,12 @@
     <footer style="margin-top: 50px; color: #666;">
         <p>© 2025 <a href="https://www.instagram.com/bb9x/" target="_blank" style="color: #3498db; text-decoration: none;">عمر بن حمادي</a>. جميع الحقوق محفوظة.</p>
     </footer>    
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('serviceWorker.js')
+            .then(() => console.log("Service Worker Registered"))
+            .catch(err => console.error("SW registration failed:", err));
+        }
+    </script>    
 </body>
 </html>
