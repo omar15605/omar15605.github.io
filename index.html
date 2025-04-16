@@ -65,6 +65,7 @@
             width: 100%;
             margin-top: 10px;
         }
+
     </style>
 </head>
 <body>
@@ -259,6 +260,72 @@
         <button onclick="togglePlayPause('audio17')">▶️/⏸</button>
         <button onclick="skip('audio17', 15)">⏩ 15s</button>
     </div>
+    <div class="audio-container">
+        <p class="audio-title">سورة الإسراء | الشيخ قاسم</p>
+        <audio id="audio18" controls>
+            <source src="audio18.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio18', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio18')">▶️/⏸</button>
+        <button onclick="skip('audio18', 15)">⏩ 15s</button>
+    </div>
+    <div class="audio-container">
+        <p class="audio-title">سورة آل عمران | الشيخ قاسم</p>
+        <audio id="audio19" controls>
+            <source src="audio19.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio19', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio19')">▶️/⏸</button>
+        <button onclick="skip('audio19', 15)">⏩ 15s</button>
+    </div>
+    <div class="audio-container">
+        <p class="audio-title">سورة الكهف | الشيخ قاسم</p>
+        <audio id="audio20" controls>
+            <source src="audio20.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio20', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio20')">▶️/⏸</button>
+        <button onclick="skip('audio20', 15)">⏩ 15s</button>
+    </div>
+    <div class="audio-container">
+        <p class="audio-title">سورة غافر | الشيخ قاسم</p>
+        <audio id="audio21" controls>
+            <source src="audio21.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio21', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio21')">▶️/⏸</button>
+        <button onclick="skip('audio21', 15)">⏩ 15s</button>
+    </div>
+    <div class="audio-container">
+        <p class="audio-title">سورة الزخرف | الشيخ قاسم</p>
+        <audio id="audio22" controls>
+            <source src="audio22.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio22', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio22')">▶️/⏸</button>
+        <button onclick="skip('audio22', 15)">⏩ 15s</button>
+    </div>
+    <div class="audio-container">
+        <p class="audio-title">سورة آل عمران | الشيخ قاسم</p>
+        <audio id="audio23" controls>
+            <source src="audio23.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio23', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio23')">▶️/⏸</button>
+        <button onclick="skip('audio23', 15)">⏩ 15s</button>
+    </div>
 
     <script>
         const audios = document.querySelectorAll('audio');
@@ -292,5 +359,6 @@
             .catch(err => console.error("SW registration failed:", err));
         }
     </script>    
+
 </body>
 </html>
