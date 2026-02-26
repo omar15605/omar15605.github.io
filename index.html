@@ -22,6 +22,39 @@
             color: #2c3e50;
             margin-bottom: 40px;
         }
+                /* أزرار الأقسام */
+        .tabs {
+            margin-bottom: 30px;
+        }
+        .tab-btn {
+            margin: 5px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: #ddd;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        .tab-btn.active {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        /* إخفاء الأقسام */
+        .section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .audio-container {
             background: linear-gradient(145deg, #ffffff, #e6e6e6);
             padding: 25px;
@@ -70,7 +103,17 @@
 </head>
 <body>
     <h2>تسجيل صوتيات قراءة قرآن</h2>
+        <!-- أزرار التبديل بين المشايخ -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showSection('sheikh1', this)">عبدالسلام العبيدي</button>
+        <button class="tab-btn" onclick="showSection('sheikh2', this)">معاذ حسن الشيخي</button>
+        <button class="tab-btn" onclick="showSection('sheikh3', this)">أحمد الدرسي</button>
+        <button class="tab-btn" onclick="showSection('sheikh4', this)">قاسم الفرجاني</button>
+        <button class="tab-btn" onclick="showSection('sheikh5', this)">محمد يحيى</button>
+        <button class="tab-btn" onclick="showSection('sheikh6', this)">ياسر الدوسري</button>
+    </div>
 
+    <div id="sheikh1" class="section active">
     <div class="audio-container">
         <p class="audio-title">تراويح 10 رمضان | عبدالسلام العبيدي</p>
         <audio id="audio1" controls>
@@ -81,9 +124,35 @@
         <button onclick="skip('audio1', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio1')">▶️/⏸</button>
         <button onclick="skip('audio1', 15)">⏩ 15s</button>
+        </div>
+
+    <div class="audio-container">
+        <p class="audio-title">سورة الشعراء | عبدالسلام العبيدي</p>
+        <audio id="audio4" controls>
+            <source src="audio4.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio4', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio4')">▶️/⏸</button>
+        <button onclick="skip('audio4', 15)">⏩ 15s</button>
+        </div>
+
+            <div class="audio-container">
+        <p class="audio-title">تراويح 11 رمضان | عبدالسلام العبيدي</p>
+        <audio id="audio10" controls>
+            <source src="audio10.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio10', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio10')">▶️/⏸</button>
+        <button onclick="skip('audio10', 15)">⏩ 15s</button>
+        </div>
     </div>
     
-    <div class="audio-container">
+    <div id="sheikh2" class="section">
+            <div class="audio-container">
         <p class="audio-title">معاذ حسن الشيخي سورة البقرة</p>
         <audio id="audio" controls>
             <source src="audio.mp3" type="audio/mpeg">
@@ -93,8 +162,22 @@
         <button onclick="skip('audio', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio')">▶️/⏸</button>
         <button onclick="skip('audio', 15)">⏩ 15s</button>
+        </div>
+
+            <div class="audio-container">
+        <p class="audio-title">سورة الانبياء | معاذ حسن الشيخي</p>
+        <audio id="audio8" controls>
+            <source src="audio8.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio8', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio8')">▶️/⏸</button>
+        <button onclick="skip('audio8', 15)">⏩ 15s</button>
+        </div>
     </div>
-    
+
+        <div id="sheikh3" class="section">
     <div class="audio-container">
         <p class="audio-title">سورة غافر | احمد الدرسي</p>
         <audio id="audio2" controls>
@@ -106,62 +189,8 @@
         <button onclick="togglePlayPause('audio2')">▶️/⏸</button>
         <button onclick="skip('audio2', 15)">⏩ 15s</button>
     </div>
-    <div class="audio-container">
-        <p class="audio-title">سورة الشعراء | عبدالسلام العبيدي</p>
-        <audio id="audio4" controls>
-            <source src="audio4.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <button onclick="skip('audio4', -15)">⏪ 15s</button>
-        <button onclick="togglePlayPause('audio4')">▶️/⏸</button>
-        <button onclick="skip('audio4', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
-        <p class="audio-title">سورة يوسف | محمد يحيى</p>
-        <audio id="audio5" controls>
-            <source src="audio5.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <button onclick="skip('audio5', -15)">⏪ 15s</button>
-        <button onclick="togglePlayPause('audio5')">▶️/⏸</button>
-        <button onclick="skip('audio5', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
-        <p class="audio-title">سورة مريم | محمد يحيى</p>
-        <audio id="audio6" controls>
-            <source src="audio6.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <button onclick="skip('audio6', -15)">⏪ 15s</button>
-        <button onclick="togglePlayPause('audio6')">▶️/⏸</button>
-        <button onclick="skip('audio6', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
-        <p class="audio-title">سورة الرحمن | محمد يحيى</p>
-        <audio id="audio7" controls>
-            <source src="audio7.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <button onclick="skip('audio7', -15)">⏪ 15s</button>
-        <button onclick="togglePlayPause('audio7')">▶️/⏸</button>
-        <button onclick="skip('audio7', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
-        <p class="audio-title">سورة الانبياء | معاذ حسن الشيخي</p>
-        <audio id="audio8" controls>
-            <source src="audio8.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <button onclick="skip('audio8', -15)">⏪ 15s</button>
-        <button onclick="togglePlayPause('audio8')">▶️/⏸</button>
-        <button onclick="skip('audio8', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
+
+        <div class="audio-container">
         <p class="audio-title">سورة المائدة | احمد الدرسي</p>
         <audio id="audio9" controls>
             <source src="audio9.mp3" type="audio/mpeg">
@@ -172,28 +201,7 @@
         <button onclick="togglePlayPause('audio9')">▶️/⏸</button>
         <button onclick="skip('audio9', 15)">⏩ 15s</button>
     </div>
-    <div class="audio-container">
-        <p class="audio-title">تراويح 11 رمضان | عبدالسلام العبيدي</p>
-        <audio id="audio10" controls>
-            <source src="audio10.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <button onclick="skip('audio10', -15)">⏪ 15s</button>
-        <button onclick="togglePlayPause('audio10')">▶️/⏸</button>
-        <button onclick="skip('audio10', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
-        <p class="audio-title">تراويح 23 رمضان | ياسر الدوسري</p>
-        <audio id="audio11" controls>
-            <source src="audio11.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <button onclick="skip('audio11', -15)">⏪ 15s</button>
-        <button onclick="togglePlayPause('audio11')">▶️/⏸</button>
-        <button onclick="skip('audio11', 15)">⏩ 15s</button>
-    </div>
+
     <div class="audio-container">
         <p class="audio-title">سورة الانعام | احمد الدرسي</p>
         <audio id="audio12" controls>
@@ -205,6 +213,61 @@
         <button onclick="togglePlayPause('audio12')">▶️/⏸</button>
         <button onclick="skip('audio12', 15)">⏩ 15s</button>
     </div>
+
+
+</div>
+
+    <div id="sheikh5" class="section">
+    <div class="audio-container">
+        <p class="audio-title">سورة يوسف | محمد يحيى</p>
+        <audio id="audio5" controls>
+            <source src="audio5.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio5', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio5')">▶️/⏸</button>
+        <button onclick="skip('audio5', 15)">⏩ 15s</button>
+        </div>
+
+            <div class="audio-container">
+        <p class="audio-title">سورة مريم | محمد يحيى</p>
+        <audio id="audio6" controls>
+            <source src="audio6.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio6', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio6')">▶️/⏸</button>
+        <button onclick="skip('audio6', 15)">⏩ 15s</button>
+    </div>
+
+    <div class="audio-container">
+        <p class="audio-title">سورة الرحمن | محمد يحيى</p>
+        <audio id="audio7" controls>
+            <source src="audio7.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio7', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio7')">▶️/⏸</button>
+        <button onclick="skip('audio7', 15)">⏩ 15s</button>
+    </div>
+    </div>
+
+    <div id="sheikh6" class="section">
+    <div class="audio-container">
+        <p class="audio-title">تراويح 23 رمضان | ياسر الدوسري</p>
+        <audio id="audio11" controls>
+            <source src="audio11.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br>
+        <button onclick="skip('audio11', -15)">⏪ 15s</button>
+        <button onclick="togglePlayPause('audio11')">▶️/⏸</button>
+        <button onclick="skip('audio11', 15)">⏩ 15s</button>
+    </div>
+
     <div class="audio-container">
         <p class="audio-title">سورة الانسان | ياسر الدوسري | فجر 20 رمضان</p>
         <audio id="audio13" controls>
@@ -216,6 +279,7 @@
         <button onclick="togglePlayPause('audio13')">▶️/⏸</button>
         <button onclick="skip('audio13', 15)">⏩ 15s</button>
     </div>
+
     <div class="audio-container">
         <p class="audio-title">سورة الفرقان | ياسر الدوسري | عشاء 21 رمضان</p>
         <audio id="audio14" controls>
@@ -227,6 +291,7 @@
         <button onclick="togglePlayPause('audio14')">▶️/⏸</button>
         <button onclick="skip('audio14', 15)">⏩ 15s</button>
     </div>
+
     <div class="audio-container">
         <p class="audio-title">سورة القلم | ياسر الدوسري | تراويح 28 رمضان</p>
         <audio id="audio15" controls>
@@ -238,6 +303,7 @@
         <button onclick="togglePlayPause('audio15')">▶️/⏸</button>
         <button onclick="skip('audio15', 15)">⏩ 15s</button>
     </div>
+
     <div class="audio-container">
         <p class="audio-title">سورة المعارج | ياسر الدوسري | تراويح 28 رمضان</p>
         <audio id="audio16" controls>
@@ -249,6 +315,7 @@
         <button onclick="togglePlayPause('audio16')">▶️/⏸</button>
         <button onclick="skip('audio16', 15)">⏩ 15s</button>
     </div>
+
     <div class="audio-container">
         <p class="audio-title">سورة الحاقة | ياسر الدوسري | تراويح 28 رمضان</p>
         <audio id="audio17" controls>
@@ -260,6 +327,9 @@
         <button onclick="togglePlayPause('audio17')">▶️/⏸</button>
         <button onclick="skip('audio17', 15)">⏩ 15s</button>
     </div>
+    </div>
+
+        <div id="sheikh4" class="section">
     <div class="audio-container">
         <p class="audio-title">سورة الإسراء | الشيخ قاسم الفرجاني</p>
         <audio id="audio18" controls>
@@ -270,8 +340,9 @@
         <button onclick="skip('audio18', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio18')">▶️/⏸</button>
         <button onclick="skip('audio18', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
+        </div>
+
+            <div class="audio-container">
         <p class="audio-title">سورة آل عمران | الشيخ قاسم الفرجاني</p>
         <audio id="audio19" controls>
             <source src="audio19.mp3" type="audio/mpeg">
@@ -281,8 +352,9 @@
         <button onclick="skip('audio19', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio19')">▶️/⏸</button>
         <button onclick="skip('audio19', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
+        </div> 
+
+            <div class="audio-container">
         <p class="audio-title">سورة الكهف | الشيخ قاسم الفرجاني</p>
         <audio id="audio20" controls>
             <source src="audio20.mp3" type="audio/mpeg">
@@ -292,8 +364,9 @@
         <button onclick="skip('audio20', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio20')">▶️/⏸</button>
         <button onclick="skip('audio20', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
+        </div>
+
+            <div class="audio-container">
         <p class="audio-title">سورة غافر | الشيخ قاسم الفرجاني</p>
         <audio id="audio21" controls>
             <source src="audio21.mp3" type="audio/mpeg">
@@ -303,8 +376,9 @@
         <button onclick="skip('audio21', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio21')">▶️/⏸</button>
         <button onclick="skip('audio21', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
+        </div>
+
+            <div class="audio-container">
         <p class="audio-title">سورة الزخرف | الشيخ قاسم الفرجاني</p>
         <audio id="audio22" controls>
             <source src="audio22.mp3" type="audio/mpeg">
@@ -314,8 +388,9 @@
         <button onclick="skip('audio22', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio22')">▶️/⏸</button>
         <button onclick="skip('audio22', 15)">⏩ 15s</button>
-    </div>
-    <div class="audio-container">
+        </div>
+
+            <div class="audio-container">
         <p class="audio-title">سورة آل عمران | الشيخ قاسم الفرجاني</p>
         <audio id="audio23" controls>
             <source src="audio23.mp3" type="audio/mpeg">
@@ -325,7 +400,10 @@
         <button onclick="skip('audio23', -15)">⏪ 15s</button>
         <button onclick="togglePlayPause('audio23')">▶️/⏸</button>
         <button onclick="skip('audio23', 15)">⏩ 15s</button>
+        </div>
+
     </div>
+
 
     <script>
         const audios = document.querySelectorAll('audio');
@@ -347,6 +425,14 @@
         function skip(audioId, seconds) {
             const audio = document.getElementById(audioId);
             audio.currentTime += seconds;
+        }
+        
+        function showSection(sectionId, btn) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+            btn.classList.add('active');
         }
     </script>
     <footer style="margin-top: 50px; color: #666;">
